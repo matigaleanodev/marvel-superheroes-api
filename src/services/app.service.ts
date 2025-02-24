@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { HttpService } from '@nestjs/axios';
 import {
   Injectable,
@@ -72,8 +70,9 @@ export class AppService {
       return response.data;
     } catch (error) {
       if (error instanceof AxiosError) {
+        const axiosError = error as AxiosError<{ status: string }>;
         throw new InternalServerErrorException(
-          `Error en la API de Marvel: ${error.response?.data?.status || error.message}`,
+          `Error en la API de Marvel: ${axiosError.response?.data?.status || axiosError.message}`,
         );
       }
       throw new InternalServerErrorException(

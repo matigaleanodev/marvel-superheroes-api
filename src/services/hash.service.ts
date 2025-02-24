@@ -30,7 +30,7 @@ export class HashService {
     try {
       const hashString = ts + this.marvelPrivateKey + this.marvelApiKey;
       return crypto.createHash('md5').update(hashString).digest('hex');
-    } catch (error) {
+    } catch {
       throw new InternalServerErrorException(
         'Error al generar el hash de autenticación.',
       );
