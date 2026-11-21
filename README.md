@@ -1,57 +1,28 @@
-# Marvel Superheroes API
+# Marvel Superheroes — API
 
-API que sirve como intermediario entre la aplicación y la API de Marvel, proporcionando acceso a una lista de superhéroes y los detalles de cada uno.
+[Español](README.es.md)
 
-## Requisitos
+NestJS technical assessment for a Marvel character-list integration. Preserved as assessment code rather than a maintained production API.
 
-Antes de comenzar, asegúrate de tener instalados los siguientes programas y configurados las claves de la API de Marvel:
+## Stack
 
-[![Node.js](https://img.shields.io/badge/Node.js-v22.14.0-brightgreen)](https://nodejs.org/)
-[![NestJS](https://img.shields.io/badge/NestJS-v11.0.0-E0234E)](https://nestjs.com/)
-[![Git](https://img.shields.io/badge/Git-v2.48.1-f15a29)](https://git-scm.com/)
-[![APIKEY MARVEL](https://img.shields.io/badge/APIKEY%20MARVEL-Obtenla%20aqui-orange)](https://developer.marvel.com/account)
+NestJS · TypeScript · Axios · Swagger.
 
-## Instalación
+## Scope and configuration
 
-1. Clona el repositorio en tu máquina local:
+Configure MARVEL_API, MARVEL_PUBLIC_KEY and MARVEL_PRIVATE_KEY server-side. The service signs requests and forwards query parameters to the provider. External API access and credentials are required to exercise the integration.
 
-   ```bash
-   git clone https://github.com/matigaleanodev/marvel-superheroes-api
-   cd marvel-superheroes-api
-   ```
+## Local development
 
-2. Instala las dependencias del proyecto:
+Use a Node.js toolchain compatible with package.json and the dependency lockfile, when present.
 
-   ```bash
-   npm install
-   ```
+```sh
+npm install
+npm run start:dev
+npm run build
+npm test
+```
 
-3. Configura las variables de entorno. Abre el archivo `.env` y agrega las claves correspondientes:
+## Related repositories
 
-   ```bash
-   MARVEL_PUBLIC_KEY="AQUI VA LA KEY PUBLICA DE MARVEL"
-   MARVEL_PRIVATE_KEY="AQUI VA LA KEY PRIVADA DE MARVEL"
-   MARVEL_API="https://gateway.marvel.com/v1/public"
-   ```
-
-4. Ejecuta la API en tu entorno local:
-
-   ```bash
-   npm run start
-   ```
-
-   La API estará disponible en `http://localhost:3000/api`.
-
-## Endpoints
-
-### `GET /api/characters`
-
-Obtiene la lista de héroes de Marvel.
-
-**Parámetros:**
-
-- `limit` (opcional): Limita el número de héroes a mostrar.
-
-## Funcionalidad
-
-- **Listar héroes:** Permite obtener una lista de superhéroes de Marvel, filtrada por el parámetro `limit`.
+- [marvel-supereoes](https://github.com/matigaleanodev/marvel-supereoes)
